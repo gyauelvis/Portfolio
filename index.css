@@ -6,7 +6,8 @@
 }
 
 header {
-    background-color: var(--navBg);
+    background-color: #fff;
+    background-attachment: fixed;
     width: 100%;
     height: 4rem;
     display: flex;
@@ -84,7 +85,7 @@ header .navBar .toggleButton img:hover {
 .navCollapseOn {
     width: 100%;
     height: calc(100vh - 4rem);
-    opacity: 0.85;
+    opacity:0.75;
     background-color: #FFB701;
     display: flex;
     flex-direction: row;
@@ -92,6 +93,7 @@ header .navBar .toggleButton img:hover {
     align-items: center;
     transition: width 0.25s ease-in 0s;
     position: fixed;
+    top: 4rem;
     animation: navAppears 0.25s ease-out 0s 1 normal forwards;
 }
 
@@ -107,7 +109,6 @@ header .navBar .toggleButton img:hover {
 
     50% {
         width: 50%;
-        ;
     }
 
     75% {
@@ -119,50 +120,48 @@ header .navBar .toggleButton img:hover {
     }
 }
 
-.navCollapseOn .navLinks {}
+/* .navCollapseOn .navLinks {} */
 
 .navCollapseOn .navLinks ul {
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
-    animation: navLinksAppear 0.4s ease-in 0s normal forwards;
+    animation: navLinksAppear 0.25s ease-in 0s normal forwards;
 }
 
 .navCollapseOn .navLinks ul li {
     list-style-type: none;
 }
 
-.navCollapseOn .navLinks ul li a {
+.navCollapseOn .navLinks ul li a{
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
-    color: #1e1e1e;
+    color: #000;
     line-height: 6rem;
     overflow: hidden;
     white-space: nowrap;
-    animation: navLinksAppear 0.4s ease-in 0s normal forwards;
 }
 
 @keyframes navLinksAppear {
     0% {
-        opacity: 0;
+        width: 0%;
     }
 
     25% {
-        opacity: 0.25;
+        width: 25%;
     }
 
     50% {
-        opacity: 0.5;
-        ;
+        width: 50%;
     }
 
     75% {
-        opacity: 0.75;
+        width: 75%;
     }
 
     100% {
-        opacity: 1;
+        width:100%;
     }
 }
 
@@ -171,13 +170,14 @@ header .navBar .toggleButton img:hover {
     flex-direction: column;
     justify-content: end;
     padding: 2rem 2rem;
+    
 }
 
-.navCollapseOn .navIcons img {
+.navCollapseOn .navIcons img{
     width: 2.5rem;
     height: 2.5rem;
     padding: 1rem 0;
-    animation: navLinksAppear 0.5s ease-in 0s normal forwards;
+    animation: navLinksAppear 0.25s ease-in 0s normal forwards;
 
 }
 
@@ -209,7 +209,6 @@ header .navBar .toggleButton img:hover {
 
     50% {
         width: 50%;
-        ;
     }
 
     75% {
@@ -248,7 +247,7 @@ header .navBar .toggleButton img:hover {
     align-items: center;
     padding: 1rem;
     text-align: center;
-    line-height: 2rem;
+    line-height: 2.5rem;
     z-index: 1;
 }
 
@@ -272,7 +271,7 @@ header .navBar .toggleButton img:hover {
 }
 
 .bannerHeader .myName {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.9rem;
     font-weight: 600;
     color: #fff;
@@ -281,7 +280,7 @@ header .navBar .toggleButton img:hover {
 }
 
 .bannerHeader .whatIDo {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     font-weight: 500;
     z-index: 3;
@@ -289,12 +288,43 @@ header .navBar .toggleButton img:hover {
     text-shadow: 2px 2px 8px #1e1e1e;
 }
 main .aboutMe{
-    
+    padding: 1rem; 
 }
 main .aboutMe h2{
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    padding: 0 0 0.8rem 0;
+}
+main .aboutMe h2:after{
+    content: "";
+    display: block;
+    height: 0.15rem;
+    margin: 0 0 0 0.2rem;
+    width: 5rem;
+    background-color: gold;
 }
 main .aboutMe div{
-    
+   font-family: "Roboto",sans-serif; 
+   text-align: justify;
+   font-size: 1.1rem;
+   line-height: 1.5rem;
 }
+main .aboutMe button{
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    border: 0px;
+    display: block;
+    width: fit-content;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    color: #000;
+    padding: 0.5rem 1.5rem;
+    opacity: 0.75;
+    background-color: #FFB701;
+    transition: opacity 300ms;
+ }
+ main .aboutMe button:hover{
+    opacity: 1;
+ }
