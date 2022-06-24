@@ -1,330 +1,411 @@
 /*This is where the variables are set*/
 :root {
-    --backgroundColor: var(rgb(238, 243, 254));
-    --textColor: var(#1e1e1e);
-    --navBg: var(#fff);
+  --backgroundColor: var(rgb(238, 243, 254));
+  --textColor: var(#1e1e1e);
+  --navBg: var(#fff);
 }
 
 header {
-    background-color: #fff;
-    background-attachment: fixed;
-    width: 100%;
-    height: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 0 5px #1e1e1e;
-    z-index: 3;
+  background-color: #fff;
+  background-attachment: fixed;
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 5px #1e1e1e;
+  z-index: 3;
 }
 
 header .navBar {
-    display: flex;
-    align-items: center;
-    z-index: 3;
-
+  display: flex;
+  align-items: center;
+  z-index: 3;
 }
 
 /*Styling the brand name*/
 header .navBar .brandName {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 2rem;
-    position: absolute;
-    left: 0;
-    padding: 0 1.5rem;
-    color: var(--textColor);
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  left: 0;
+  padding: 0 1.5rem;
+  color: var(--textColor);
 }
 
 header .navBar .toggleButton {
-    position: absolute;
-    right: 0;
-    padding: 0 1.5rem;
+  position: absolute;
+  right: 0;
+  padding: 0 1.5rem;
 }
 
 header .navBar .toggleButton img {
-    width: 2rem;
-    height: 2rem;
-    padding: 0 0.5rem;
-    transition: all 0.3s ease-in 0s;
+  width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  transition: all 0.3s ease-in 0s;
 }
 
 header .navBar .toggleButton img:hover {
-    border: 2px solid rgb(2, 9, 24);
-    border-radius: 0.5rem;
+  border: 2px solid rgb(2, 9, 24);
+  border-radius: 0.5rem;
 }
 
 /* The style the hides the nav dialogue box */
 .navCollapseOff {
-    display: none;
-    height: 0;
-    width: 0;
-    opacity: 0.75;
-    background-color: #FFB701;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: none;
+  height: 0;
+  width: 0;
+  opacity: 0.75;
+  background-color: rgb(38, 50, 56);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navCollapseOff .navLinks ul {
-    display: none;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
+  display: none;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
 }
 
 .navCollapseOff .navIcons {
-    display: none;
-    flex-direction: column;
-    justify-content: end;
-    padding: 2rem 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 2rem;
 }
 
 /* Styling the nav-collapse(the dialogue box that appears after clicking on the toogle button)*/
 .navCollapseOn {
-    width: 100%;
-    height: calc(100vh - 4rem);
-    opacity:0.75;
-    background-color: #FFB701;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    transition: width 0.25s ease-in 0s;
-    position: fixed;
-    top: 4rem;
-    animation: navAppears 0.25s ease-out 0s 1 normal forwards;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  opacity: 0.75;
+  background-color: rgb(38, 50, 56);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: width 0.25s ease-in 0s;
+  position: fixed;
+  top: 4rem;
+  animation: navAppears 0.25s ease-out 0s 1 normal forwards;
 }
 
 /* Animation responsible for the smooth sliding in of the toggle menu */
 @keyframes navAppears {
-    0% {
-        width: 0;
-    }
+  0% {
+    width: 0;
+  }
 
-    25% {
-        width: 25%;
-    }
+  25% {
+    width: 25%;
+  }
 
-    50% {
-        width: 50%;
-    }
+  50% {
+    width: 50%;
+  }
 
-    75% {
-        width: 75%;
-    }
+  75% {
+    width: 75%;
+  }
 
-    100% {
-        width: 100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
 /* .navCollapseOn .navLinks {} */
 
 .navCollapseOn .navLinks ul {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    animation: navLinksAppear 0.25s ease-in 0s normal forwards;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  animation: navLinksAppear 0.25s ease-in 0s normal forwards;
 }
 
 .navCollapseOn .navLinks ul li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
-.navCollapseOn .navLinks ul li a{
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    color: #000;
-    line-height: 6rem;
-    overflow: hidden;
-    white-space: nowrap;
+.navCollapseOn .navLinks ul li a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  color: #eee;
+  line-height: 6rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @keyframes navLinksAppear {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    25% {
-        width: 25%;
-    }
+  25% {
+    width: 25%;
+  }
 
-    50% {
-        width: 50%;
-    }
+  50% {
+    width: 50%;
+  }
 
-    75% {
-        width: 75%;
-    }
+  75% {
+    width: 75%;
+  }
 
-    100% {
-        width:100%;
-    }
+  100% {
+    width: 100%;
+  }
 }
 
 .navCollapseOn .navIcons {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding: 2rem 2rem;
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem 2rem;
 }
 
-.navCollapseOn .navIcons img{
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 1rem 0;
-    animation: navLinksAppear 0.25s ease-in 0s normal forwards;
-
+.navCollapseOn .navIcons img {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 1rem 0;
+  opacity: 1;
+  animation: navLinksAppear 0.25s ease-in 0s normal forwards;
 }
+/* .navCollapseOn .navIcons img:hover{
+
+} */
 
 /* Styling how the toggle menu goes out */
 
 .navCollapseSlideOff {
-    width: 100%;
-    height: calc(100vh - 4rem);
-    opacity: 0.85;
-    background-color: #FFB701;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    transition: width 0.25s ease-in 0s;
-    position: fixed;
-    animation: navDisappears 0.25s ease-out 0s 1 normal forwards;
+  width: 100%;
+  height: calc(100vh - 4rem);
+  opacity: 0.85;
+  background-color: rgb(38, 50, 56);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: width 0.25s ease-in 0s;
+  position: fixed;
+  animation: navDisappears 0.25s ease-out 0s 1 normal forwards;
 }
 
 /* The animation responsible for the smooth sliding out of the toogle button */
 @keyframes navDisappears {
-    0% {
-        width: 100%;
-    }
+  0% {
+    width: 100%;
+  }
 
-    25% {
-        width: 75%;
-    }
+  25% {
+    width: 75%;
+  }
 
-    50% {
-        width: 50%;
-    }
+  50% {
+    width: 50%;
+  }
 
-    75% {
-        width: 25%;
-    }
+  75% {
+    width: 25%;
+  }
 
-    100% {
-        width: 0%;
-    }
+  100% {
+    width: 0%;
+  }
 }
 
 .navCollapseSlideOff .navLinks ul {
-    display: none;
+  display: none;
 }
 
 .navCollapseSlideOff .navIcons {
-    display: none;
+  display: none;
 }
 
 .navCollapseSlideOff .navIcons img {
-    display: none;
-    visibility: hidden;
+  display: none;
+  visibility: hidden;
 }
 
 /* Styling the banner */
 .bannerHeader {
-    height: calc(100vh - 4rem);
-    background: url(./img/5484597.jpg);
-    background-color: #fff;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    text-align: center;
-    line-height: 2.5rem;
-    z-index: 1;
+  height: calc(100vh - 4rem);
+  background: url(./img/Developer\ activity-rafiki.png);
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  line-height: 2.5rem;
+  z-index: 1;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.85;
-    background-color: #FFB701;
-    border-radius: 1rem;
-    width: 100%;
-    height: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 0.75; */
+  background-color: rgba(38, 50, 56, 0.75);
+  border-radius: 1rem;
+  width: 100%;
+  height: 45%;
 }
 
 .bannerHeader .myImg img {
-    width: 4rem;
-    height: 4rem;
-    opacity: 1;
-    border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  opacity: 1;
+  border-radius: 50%;
 }
 
 .bannerHeader .myName {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.9rem;
-    font-weight: 600;
-    color: #fff;
-    text-shadow: 2px 2px 8px #1e1e1e;
-    z-index: 3;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #fff;
+  z-index: 1;
 }
 
 .bannerHeader .whatIDo {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    z-index: 3;
-    color: #fff;
-    text-shadow: 2px 2px 8px #1e1e1e;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  z-index: 1;
+  color: #fff;
+  text-shadow: 2px 2px 8px #1e1e1e;
 }
-main .aboutMe{
-    padding: 1rem; 
+main .aboutMe {
+  padding: 1rem;
 }
-main .aboutMe h2{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 1.6rem;
-    padding: 0 0 0.8rem 0;
+main .aboutMe h2,
+.skills h2,
+.projects h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.6rem;
+  padding: 0 0 0.8rem 0;
+  color: rgb(38, 50, 56);
 }
-main .aboutMe h2:after{
-    content: "";
-    display: block;
-    height: 0.15rem;
-    margin: 0 0 0 0.2rem;
-    width: 5rem;
-    background-color: gold;
+main .aboutMe h2:after {
+  content: "";
+  display: block;
+  height: 0.15rem;
+  margin: 0 0 0 0.2rem;
+  width: 5rem;
+  background-color: rgba(38, 50, 56);
 }
-main .aboutMe div{
-   font-family: "Roboto",sans-serif; 
-   text-align: justify;
-   font-size: 1.1rem;
-   line-height: 1.5rem;
+main .aboutMe div {
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  color: #000;
 }
-main .aboutMe button{
-    font-size: 1.5rem;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 500;
-    text-align: center;
-    border: 0px;
-    display: block;
-    width: fit-content;
-    border-radius: 1rem;
-    margin: 1rem auto;
-    color: #000;
-    padding: 0.5rem 1.5rem;
-    opacity: 0.75;
-    background-color: #FFB701;
-    transition: opacity 300ms;
- }
- main .aboutMe button:hover{
-    opacity: 1;
- }
+main .aboutMe button {
+  font-size: 1.5rem;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  border: 0px;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  color: #000;
+  padding: 0.5rem 1.5rem;
+  background-color: rgba(38, 50, 56, 0.75);
+  transition: background 300ms;
+}
+main .aboutMe button:hover {
+  background-color: rgba(38, 50, 56, 1);
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+.skills h2::after,
+.projects h2::after {
+  content: "";
+  display: block;
+  height: 0.14rem;
+  margin: 0 0 0 0.2rem;
+  width: 2.7rem;
+  background-color: rgba(38, 50, 56);
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-align: justify;
+  border: 0.125rem solid rgb(38, 50, 56);
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+}
+.innerSkill {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: baseline;
+}
+.innerSkill span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0 0.5rem;
+  color: rgb(38, 50, 56);
+}
+.skill img {
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0.5rem 0;
+}
+.projects {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background-color: rgb(38, 50, 56);
+}
+.projects h2 {
+  color: #eee;
+}
+.projects h2::after {
+  content: "";
+  display: block;
+  height: 0.14rem;
+  margin: 0.1rem 0 0 0.4rem;
+  width: 4rem;
+  background-color: #eee;
+}
+
+.projects .project a img {
+  width: 100%;
+  height: 10rem;
+  padding: 0.8rem 0;
+  transition-duration: 200ms;
+}
+
+/* .projects .project a img:hover {
+} */
